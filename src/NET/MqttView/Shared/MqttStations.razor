@@ -4,13 +4,28 @@
 
 @foreach (var kv in Service.Clients)
 {
-    <dl class="@(string.IsNullOrEmpty(kv.Value) ? "is-empty" : "non-empty")">
+    <dl class="@(IsEmpty(kv.Value) ? "is-empty" : "non-empty")">
         <dt>@kv.Key</dt>
         <dd>@kv.Value</dd>
     </dl>
 }
 
 @code {
+
+    private bool IsEmpty(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return true;
+        }
+
+        if (value == "0" || value == "off")
+        {
+            return true;
+        }
+
+        return false;
+    }
 
     private void Service_OnStateUpdated(object? sender, EventArgs e)
     {
