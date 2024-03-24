@@ -123,3 +123,10 @@ void loop() {
 
 <img src="img/IEC_61131-3.png" height="200" />
 
+---
+
+# MQTT
+
+
+MQTT nebo Message Queue Telemetry Transport je lehký, kompaktní a otevřený protokol výměny dat určený pro přenos dat na vzdálená místa, kde je vyžadována malá velikost kódu a existují omezení šířky pásma. Tyto výhody umožňují jeho použití v systémech M2M (machine-to-machine) a IIoT Systems (Industrial Internet of Things).
+
