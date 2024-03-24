@@ -1,0 +1,29 @@
+﻿@using MqttView.Data
+@implements IDisposable
+@inject MqttService Service
+
+@foreach (var kv in Service.Clients)
+{
+    <dl class="@(string.IsNullOrEmpty(kv.Value) ? "is-empty" : "non-empty")">
+        <dt>@kv.Key</dt>
+        <dd>@kv.Value</dd>
+    </dl>
+}
+
+@code {
+
+    private void Service_OnStateUpdated(object? sender, EventArgs e)
+    {
+        InvokeAsync(this.StateHasChanged);
+    }
+
+    protected override void OnInitialized()
+    {
+        Service.StateUpdated += Service_OnStateUpdated;
+    }
+
+    public void Dispose()
+    {
+        Service.StateUpdated -= Service_OnStateUpdated;
+    }
+}
