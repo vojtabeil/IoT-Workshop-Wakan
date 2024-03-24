@@ -1,5 +1,5 @@
 # IoT Workshop Wakan
-## 24. března 2024
+## 25. března 2024
 
 * Vojtěch beil
 * vojtech@beil.cz
@@ -15,13 +15,13 @@
 
 # Kontrolery
 
-![bg left 35% ESP32 ](img/esp32.jpg)
+![bg left 90% ESP32](img/esp32.jpg)
 
 * Arduino (Uno, Micro, Mega, Leonardo, Lilypad, ...)
 * ESP8266, ESP32, ...
 * Raspberry Pi (Orange Pi, Banana Pi, ...)
 * micro:bit
-* Profesionální
+* Profesionální PLC
     * Beckhoff TwinCAT
     * Siemens Simatic
     * ...
@@ -30,8 +30,8 @@
 
 # Arduino IDE
 
-* Původně pro programování Arduino desek.
-* Nyní má podporu i pro další desky
+* Původně pro programování Arduina.
+* Nyní má podporu i pro další vývojové desky (např. ESP32, ...)
 
 ```
 C:\Git\IoT-Workshop-Wakan\
@@ -55,7 +55,7 @@ void loop() {
 
 # Blinky
 
-![bg left 35% ESP32 Blinky ](img/01_Blink_bb.png)
+![bg left 90% ESP32 Blinky](img/01_Blink_bb.png)
 
 
 ```C++
@@ -66,21 +66,19 @@ void setup() {                  // Inicializace zařízení, rozhranní
 }
 
 void loop() {                   // Origramová smyčka
-  digitalWrite(PIN, HIGH);      // Nastavení logické jedničky (zapnuto)
-  delay(500);                   // Čekání 500 ms
+    digitalWrite(PIN, HIGH);      // Nastavení logické jedničky (zapnuto)
+    delay(500);                   // Čekání 500 ms
 
-  digitalWrite(PIN, LOW);       // Nastavení logické nuly (vypnuto)
-  delay(500);                   // Čekání 500 ms
+    digitalWrite(PIN, LOW);       // Nastavení logické nuly (vypnuto)
+    delay(500);                   // Čekání 500 ms
 }
 ```
 
 ---
 
-# ESP32
-
 | Název     | Espressif Systems ESP32 |
 | -         | -       |
-| CPU       | Tensilica Xtensa single-/dual-core 32-bit LX6 mikroprocesor, 1-2 CPU 240 MHz |
+| CPU       | Tensilica Xtensa single-/dual-core 32-bit LX6 mikroprocesor, 240 MHz |
 | Paměť     | 520 KiB RAM, 448 KiB ROM  |
 | Wi-fi     | 802.11 b/g/n |
 | Bluetooth | v4.2 BR/EDR, BLE |
@@ -91,7 +89,7 @@ void loop() {                   // Origramová smyčka
 
 # Tlačítko
 
-![bg left 35% ESP32 Button](img/02_Button_bb.png)
+![bg left 90% ESP32 Button](img/02_Button_bb.png)
 
 
 ```C++
@@ -103,11 +101,10 @@ void setup() {
 }
 
 void loop() {
-  int button = digitalRead(PIN);
-  Serial.printf("Tlaciko = %d\n", button);
-  delay(200);
+    int button = digitalRead(PIN);
+    Serial.printf("Tlaciko = %d\n", button);
+    delay(200);
 }
-
 ```
 
 ---
