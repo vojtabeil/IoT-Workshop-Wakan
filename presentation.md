@@ -43,34 +43,34 @@ C:\Git\IoT-Workshop-Wakan\
 
 ```C++
 void setup() {
-  // kod, ktery se provede pouze jednou pri startu
+  // kód, který se provede pouze jednou při startu
 }
 
 void loop() {
-  // kod, ktery se provadi stale dokola
+  // kód, který se provadí stále dokola
 }
 ```
 
 ---
 
-# Blinky
+# Blink
 
-![bg left 90% ESP32 Blinky](img/01_Blink_bb.png)
+![bg left 90% ESP32 Blink](img/01_Blink_bb.png)
 
 
 ```C++
 #define PIN 18                  // Budeme používat digiální pin D18
 
-void setup() {                  // Inicializace zařízení, rozhranní
+void setup() {                  // Inicializace zařízení, I/O, rozhranní
     pinMode(PIN, OUTPUT);       // Pin 18 bude sloužit jako výstup
 }
 
-void loop() {                   // Origramová smyčka
-    digitalWrite(PIN, HIGH);      // Nastavení logické jedničky (zapnuto)
-    delay(500);                   // Čekání 500 ms
+void loop() {                   // Programová smyčka
+    digitalWrite(PIN, HIGH);    // Nastavení logické jedničky (zapnuto)
+    delay(500);                 // Čekání 500 ms
 
-    digitalWrite(PIN, LOW);       // Nastavení logické nuly (vypnuto)
-    delay(500);                   // Čekání 500 ms
+    digitalWrite(PIN, LOW);     // Nastavení logické nuly (vypnuto)
+    delay(500);                 // Čekání 500 ms
 }
 ```
 
